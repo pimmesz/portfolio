@@ -3,11 +3,11 @@
     <v-row class="mb-12">
       <v-col cols="12" sm="8" offset-sm="2">
         <v-card variant="text" class="text-center">
-          <v-avatar size="150" class="mb-4">
+          <v-avatar size="120" class="mb-4">
             <v-img src="pimavatar.jpeg" alt="Pim Zonneveld"></v-img>
           </v-avatar>
-          <v-card-title class="text-h2 font-weight-bold pb-0 mb-0 text-center">Pim Zonneveld</v-card-title>
-          <v-card-subtitle class="text-h4 text-center">Full Stack Developer</v-card-subtitle>
+          <v-card-title class="text-h3 font-weight-medium pb-0 mb-0 text-center">Pim Zonneveld</v-card-title>
+          <v-card-subtitle class="text-h5 text-center mt-2 subtitle-full-opacity">Full Stack Developer</v-card-subtitle>
           <v-card-text>
             <p class="text-body-1 mb-4 text-center">I'm a passionate developer with expertise in Vue.js, Node.js, and Python. I love creating elegant solutions to complex problems and continuously learning new technologies.</p>
             <v-chip-group class="justify-center">
@@ -21,12 +21,13 @@
     <v-row class="mb-12">
       <v-col cols="12">
         <v-card variant="text">
-          <v-card-title class="text-h3 mb-4 text-center"><strong>Projects</strong></v-card-title>
+          <v-card-title class="text-h4 mb-6 text-center">Projects</v-card-title>
           <v-row>
             <v-col v-for="project in projects" :key="project.id" cols="12" sm="6" md="4">
-              <v-card class="bg-transparent-secondary h-100 project-card d-flex flex-column" elevation="2" rounded="lg">
+              <v-card class="bg-transparent-secondary h-100 project-card d-flex flex-column" elevation="1" rounded="lg">
                 <v-img :src="project.image" :alt="project.title" height="200" cover></v-img>
-                <v-card-title class="text-h5 font-weight-bold text-white">{{ project.title }}</v-card-title>
+                <v-card-title class="text-h6 font-weight-bold text-white">{{ project.title }}</v-card-title>
+                <v-card-subtitle class="text-white subtitle-full-opacity">{{ project.subtitle }}</v-card-subtitle>
                 <v-card-text class="text-body-2 text-white flex-grow-1">{{ project.description }}</v-card-text>
                 <v-card-actions class="mt-auto">
                   <v-row>
@@ -35,8 +36,8 @@
                         :href="project.link"
                         target="_blank"
                         color="white"
+                        variant="outlined"
                         rounded="pill"
-                        elevation="2"
                         block
                       >
                         <v-icon left class="mr-2">mdi-open-in-new</v-icon>
@@ -48,8 +49,8 @@
                         :href="project.github"
                         target="_blank"
                         color="white"
+                        variant="outlined"
                         rounded="pill"
-                        elevation="2"
                         block
                       >
                         <v-icon left class="mr-2">mdi-github</v-icon>
@@ -68,7 +69,7 @@
     <v-row class="mb-12">
       <v-col cols="12" sm="8" offset-sm="2">
         <v-card variant="text">
-          <v-card-title class="text-h3 mb-4 text-center"><strong>Get in Touch</strong></v-card-title>
+          <v-card-title class="text-h4 mb-6 text-center">Get in Touch</v-card-title>
           <v-form @submit.prevent="submitForm">
             <v-text-field v-model="contactForm.name" label="Your Name" required outlined rounded="lg" class="mb-4"></v-text-field>
             <v-text-field 
@@ -82,7 +83,7 @@
               :rules="[v => !!v || 'E-mail is required', v => /.+@.+\..+/.test(v) || 'E-mail must be valid']"
             ></v-text-field>
             <v-textarea v-model="contactForm.message" label="Your Message" required outlined rounded="lg" class="mb-4"></v-textarea>
-            <v-btn type="submit" color="white" x-large block rounded="pill" elevation="2">Send Message</v-btn>
+            <v-btn type="submit" color="white" variant="outlined" block rounded="pill">Send Message</v-btn>
           </v-form>
         </v-card>
       </v-col>
@@ -115,6 +116,7 @@ export default defineComponent({
       {
         id: 1,
         title: 'Tube.yt',
+        subtitle: '-- Find the music you love --',
         description: 'An fullstack automated YouTube music curation platform built with Vue.js and Node.js, featuring automatic video aggregation from popular music channels.',
         image: '/tubeytdemo.gif',
         link: 'https://tube.yt/',
@@ -194,15 +196,15 @@ export default defineComponent({
 
 <style scoped>
 .bg-transparent {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2)) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1)) !important;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bg-transparent-secondary {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1)) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.07)) !important;
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .portfolio {
@@ -215,13 +217,13 @@ export default defineComponent({
 
 .v-btn {
   text-transform: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .skill-chip {
-  opacity: 0.8;
+  opacity: 0.7;
   color: #ffffff !important;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 footer {
@@ -229,10 +231,14 @@ footer {
 }
 
 .white-label ::v-deep .v-label {
-  color: white !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .white-label ::v-deep .v-messages {
-  color: white !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.subtitle-full-opacity {
+  opacity: 1 !important;
 }
 </style>
