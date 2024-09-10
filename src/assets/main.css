@@ -1,0 +1,5 @@
+body {
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	background: linear-gradient(90deg, #e22828, #ff8c2f);
+	min-height: 100vh;
+}
