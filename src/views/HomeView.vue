@@ -3,6 +3,9 @@
     <v-row class="mb-12">
       <v-col cols="12" sm="8" offset-sm="2">
         <v-card variant="text" class="text-center">
+          <v-avatar size="150" class="mb-4">
+            <v-img src="pimavatar.jpeg" alt="Pim Zonneveld"></v-img>
+          </v-avatar>
           <v-card-title class="text-h2 font-weight-bold pb-0 mb-0 text-center">Pim Zonneveld</v-card-title>
           <v-card-subtitle class="text-h4 text-center">Full Stack Developer</v-card-subtitle>
           <v-card-text>
@@ -18,7 +21,7 @@
     <v-row class="mb-12">
       <v-col cols="12">
         <v-card variant="text">
-          <v-card-title class="text-h3 mb-4 text-center">Projects</v-card-title>
+          <v-card-title class="text-h3 mb-4 text-center"><strong>Projects</strong></v-card-title>
           <v-row>
             <v-col v-for="project in projects" :key="project.id" cols="12" sm="6" md="4">
               <v-card class="bg-transparent-secondary h-100 project-card d-flex flex-column" elevation="2" rounded="lg">
@@ -65,7 +68,7 @@
     <v-row class="mb-12">
       <v-col cols="12" sm="8" offset-sm="2">
         <v-card variant="text">
-          <v-card-title class="text-h3 mb-4 text-center">Get in Touch</v-card-title>
+          <v-card-title class="text-h3 mb-4 text-center"><strong>Get in Touch</strong></v-card-title>
           <v-form @submit.prevent="submitForm">
             <v-text-field v-model="contactForm.name" label="Your Name" required outlined rounded="lg" class="mb-4"></v-text-field>
             <v-text-field 
