@@ -113,7 +113,7 @@ export default defineComponent({
         id: 1,
         title: 'Tube.yt',
         description: 'An fullstack automated YouTube music curation platform built with Vue.js and Node.js, featuring automatic video aggregation from popular music channels.',
-        image: 'https://via.placeholder.com/300x200',
+        image: '/tubeytdemo.gif',
         link: 'https://tube.yt/',
         github: 'https://github.com/pimmesz/boilertube'
       },
