@@ -25,7 +25,7 @@
           <v-row>
             <v-col v-for="project in projects" :key="project.id" cols="12" sm="6" md="4">
               <v-card variant="elevated" elevation="1" rounded="lg" class="pa-4">
-                <v-img :src="project.image" :alt="project.title" height="200" cover class="mb-4"></v-img>
+                <v-img :src="project.image" :alt="project.title" aspect-ratio="1/2" cover class="mb-4 square-image"></v-img>
                 <v-card-title class="text-h6 font-weight-bold mb-2">{{ project.title }}</v-card-title>
                 <v-card-subtitle class=" subtitle-full-opacity mb-3">{{ project.subtitle }}</v-card-subtitle>
                 <v-card-text class="text-body-2 flex-grow-1 mb-4">{{ project.description }}</v-card-text>
