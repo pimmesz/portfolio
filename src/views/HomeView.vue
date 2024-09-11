@@ -10,7 +10,7 @@
           <v-card-subtitle class="text-h5 text-center mt-2 subtitle-full-opacity text-white">Full Stack Developer</v-card-subtitle>
           <v-card-text>
             <p class="text-body-1 mb-4 text-center text-white">I'm a passionate developer with expertise in Vue.js, Node.js, and Python. I love creating elegant solutions to complex problems and continuously learning new technologies.</p>
-            <v-chip-group class="justify-center">
+            <v-chip-group class="d-flex justify-center">
               <v-chip v-for="skill in skills" :key="skill" color="white" class="ma-2 skill-chip" label>{{ skill }}</v-chip>
             </v-chip-group>
           </v-card-text>
